@@ -1,6 +1,5 @@
-import { MongoClient } from "mongodb";
 import MeetupList from "@/components/meetups/MeetupList";
-import Head from "next/head";
+import { MongoClient } from "mongodb";
 
 const HomePage = (props) => {
 	return (
@@ -11,18 +10,6 @@ const HomePage = (props) => {
 	);
 };
 
-// export async function getServerSideProps(context) {
-// 	const req = context.req;
-// 	const res = context.res;
-
-// 	// fetch data from an API
-
-// 	return {
-// 		props: {
-// 			meetups: DUMMY_MEETUPS,
-// 		},
-// 	};
-// }
 
 export async function getStaticProps() {
 	// fetch data from an API

@@ -1,6 +1,6 @@
-import { MongoClient, ObjectId } from "mongodb";
-import MeetupDetail from "@/components/meetups/MeetupDetail";
 import Head from "next/head";
+import MeetupDetail from "@/components/meetups/MeetupDetail";
+import { MongoClient, ObjectId } from "mongodb";
 
 const MeetupDetailsPage = ({ meetupData }) => {
 	return (
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 	client.close();
 
 	return {
-		fallback: false,
+		fallback: "blocking",
 		paths: meetups.map((meetup) => ({
 			params: { meetupId: meetup._id.toString() },
 		})),
